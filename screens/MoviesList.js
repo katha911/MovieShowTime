@@ -26,7 +26,7 @@ export default function MoviesList({navigation}) {
       }
  
     return (
-        <View style={{flex: 1}}>
+        <View style={{flex: 1,backgroundColor:'black'}}>
             <FlatList
                  data={movies}
                 numColumns={2}
