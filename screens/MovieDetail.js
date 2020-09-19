@@ -30,7 +30,7 @@ export default function MovieDetail({ navigation,route }) {
                 source={{uri: movies.youtubeUrl}}
                 style={{height:200, flex:1}}
             />
-            <View style={{flex:2,padding:15,backgroundColor:'#362420'}}>
+            <View style={{flex:2,padding:15,backgroundColor:'black'}}>
                 <View style={{flexDirection:'row'}}>
                     <Image 
                     source={{ uri:movies.posterUrl }} 
