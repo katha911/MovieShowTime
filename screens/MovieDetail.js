@@ -5,16 +5,17 @@ import axios from 'axios'
 
 export default function MovieDetail({ navigation, route }) {
 
-    const [movies,setMovies] = useState({})
+    const [movies,setMovies] = useState({
+        genre: []
+    })
 
     useEffect(() => {
-        console.log(route)
-        // const itemId = route.params.id
-        // axios.get(`https://movie-api.igeargeek.com/movies/${itemId}`)
-        //     .then(res => {
-        //     const movies = res.data;
-        //     setMovies(movies)
-        // })
+        const itemId = route.params.id
+        axios.get(`https://movie-api.igeargeek.com/movies/${itemId}`)
+            .then(res => {
+            const movies = res.data;
+            setMovies(movies)
+        })
       }, [])
 
    return (
@@ -34,7 +35,10 @@ export default function MovieDetail({ navigation, route }) {
                         style={{ flex:1, height: 180 }}
                         resizeMode={'stretch'}
                     />
-                    <View style={{flex:2, marginLeft:15}}></View>
+                    <View style={{flex:2, marginLeft:15}}>
+                        <Text style={{ color: 'white', fontSize:17 }}>{movies.name}</Text>
+                        <Text style={{ color: 'white' }}> ประเภท : {movies.genre.join(', ')}</Text>
+                    </View>
                 </View>
             </View>
 
